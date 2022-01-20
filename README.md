@@ -38,5 +38,4 @@ GitHub allows its users to have usernames with different characters (upper and l
 
 Room for improvement:
 
-- Checking if the provided username exists on GitHub and informing the user if it doesn't
-- Informing the user if the app is not able (for whatever reason) to connect with the GitHub API
+- Testing the code on browsers other than Chrome and Mozilla to ensure it works properly
