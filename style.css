@@ -5,10 +5,10 @@
 :root {
   --black: rgb(0, 0, 0);
   --bgDark: rgb(40, 40, 40);
-  --dark: rgb(54, 54, 54);
-  --primary: rgb(247, 150, 174);
-  --primaryOp: rgba(247, 150, 174, 0.4);
-  --primaryOp2: rgba(247, 150, 174, 0.6);
+  --bgLight: rgb(54, 54, 54);
+  --primaryPink: rgb(247, 150, 174);
+  --secondaryPink: rgba(247, 150, 174, 0.4);
+  --primaryPinkOp: rgba(247, 150, 174, 0.6);
   --light: rgb(191, 191, 191);
 }
 
@@ -21,76 +21,68 @@
 
 /* Utilities */
 .btn {
-  width: 80px;
-  height: 24px;
+  width: 5em;
+  height: 1.5em;
   color: var(--black);
   text-transform: uppercase;
   font-family: "Open Sans", sans-serif;
   border: none;
   border-radius: 5px;
-  background-color: var(--primary);
+  background-color: var(--primaryPink);
 }
 
 a {
   text-decoration: none;
-  color: var(--primary);
+  color: var(--primaryPink);
 }
 
 .btn:hover,
 a:hover {
   cursor: pointer;
-  background-color: var(--primaryOp);
+  background-color: var(--secondaryPink);
 }
 
 /* Main styling */
-
 body {
   font-family: "Open Sans", sans-serif;
-  font-size: 1 rem;
+  font-size: 1rem;
   background-color: var(--bgDark);
   width: 100vw;
   color: var(--light);
 }
 
 form {
-  width: 340px;
-  margin: 40px auto;
+  margin: 2.5em auto;
 }
 
 form > input {
-  width: 250px;
-  height: 24px;
+  height: 1.5em;
   border-radius: 5px;
   border: none;
 }
 
 #result {
   width: 90%;
-  margin: 40px auto;
+  margin: 2.5em auto;
 }
 
 #userInfo {
   display: flex;
-  border: 2px solid var(--primary);
+  border: 2px solid var(--primaryPink);
 }
 
-.image {
-  border-right: 2px solid var(--primary);
-}
-
-.image > a > img {
+.image > img {
   border-radius: 50%;
-  width: 150px;
-  margin: 20px 15px;
+  margin: 1.25em 0.9em;
 }
 
 .user {
   width: 100%;
-  background-color: var(--dark);
+  background-color: var(--bgLight);
 }
 
 .card {
-  margin: 20px 15px;
+  margin: 1.25em 0.9em;
 }
 
 .card,
@@ -102,7 +94,7 @@ form > input {
 }
 
 .card > h2 {
-  color: var(--primary);
+  color: var(--primaryPink);
 }
 
 .date,
@@ -112,9 +104,7 @@ form > input {
 }
 
 .bio {
-  margin: 30px 15px;
-  justify-content: flex-start;
-  gap: 80px;
+  margin: 1.85em 0.9em;
   text-align: left;
 }
 
@@ -122,39 +112,32 @@ form > input {
 .card-element > h3,
 .card-element > i,
 .repo-info > h3 {
-  color: var(--primaryOp2);
-}
-
-.repos,
-.info {
-  justify-content: space-around;
-  width: 65%;
-  margin: 40px auto;
+  color: var(--primaryPinkOp);
 }
 
 .repos {
-  border: 1px solid var(--primaryOp2);
-  padding: 15px;
+  border: 1px solid var(--primaryPinkOp);
+  padding: 0.9em;
 }
 
 #userRepos {
-  margin-top: 50px;
+  margin-top: 3em;
 }
 
 #userRepos > ul {
   display: flex;
   flex-direction: column;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--primaryPink);
   list-style: none;
 }
 
 #userRepos > ul > li {
-  border-bottom: 1px solid var(--primary);
+  border-bottom: 1px solid var(--primaryPink);
   padding: 0.75em;
 }
 
 #userRepos > ul > li:nth-child(even) {
-  background-color: var(--dark);
+  background-color: var(--bgLight);
 }
 
 #userRepos > ul > li:last-child {
@@ -164,4 +147,100 @@ form > input {
 .repo-info,
 .repo-info > p {
   padding: 0.75em 0;
+}
+
+/* MEDIA QUERIES */
+@media screen and (min-width: 300px) {
+  form {
+    width: 15em;
+  }
+
+  form > input {
+    width: 12em;
+    height: 1.5em;
+  }
+
+  #userInfo {
+    flex-direction: column;
+  }
+
+  .image {
+    display: flex;
+    justify-content: center;
+    border-bottom: 2px solid var(--primaryPink);
+  }
+
+  .image > img {
+    width: 4.3em;
+  }
+
+  .card,
+  .repo-name {
+    flex-direction: column;
+  }
+
+  .date,
+  .language {
+    font-size: 0.75rem;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  form {
+    width: 18em;
+  }
+
+  form > input {
+    width: 14em;
+  }
+
+  .card,
+  .repo-name {
+    flex-direction: row;
+  }
+
+  .bio {
+    justify-content: flex-start;
+    gap: 3em;
+  }
+}
+
+@media screen and (min-width: 900px) {
+  form {
+    width: 21.25em;
+  }
+
+  form > input {
+    width: 15.6em;
+  }
+
+  #userInfo {
+    flex-direction: row;
+  }
+
+  .image > img {
+    width: 9.3em;
+  }
+
+  .image {
+    display: inline;
+    border-bottom: none;
+    border-right: 2px solid var(--primaryPink);
+  }
+
+  .repos,
+  .info {
+    justify-content: space-around;
+    width: 65%;
+    margin: 2.5em auto;
+  }
+
+  .bio {
+    gap: 5em;
+  }
+
+  .date,
+  .language {
+    font-size: 1rem;
+  }
 }

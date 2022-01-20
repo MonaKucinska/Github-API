@@ -34,7 +34,7 @@ const fetchData = async (userName) => {
 const printUserInfo = (user) => {
    userInfo.innerHTML = `
    <div class="image">
-    <a href="${user.html_url}"><img src='${user.avatar_url}' alt='User photo' /></a>
+    <img src='${user.avatar_url}' alt='User photo' />
    </div>
    <div class="user">
     <div class="card">
