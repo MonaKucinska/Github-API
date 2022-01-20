@@ -1,0 +1,167 @@
+/* Imports */
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap");
+
+/* Variables */
+:root {
+  --black: rgb(0, 0, 0);
+  --bgDark: rgb(40, 40, 40);
+  --dark: rgb(54, 54, 54);
+  --primary: rgb(247, 150, 174);
+  --primaryOp: rgba(247, 150, 174, 0.4);
+  --primaryOp2: rgba(247, 150, 174, 0.6);
+  --light: rgb(191, 191, 191);
+}
+
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Utilities */
+.btn {
+  width: 80px;
+  height: 24px;
+  color: var(--black);
+  text-transform: uppercase;
+  font-family: "Open Sans", sans-serif;
+  border: none;
+  border-radius: 5px;
+  background-color: var(--primary);
+}
+
+a {
+  text-decoration: none;
+  color: var(--primary);
+}
+
+.btn:hover,
+a:hover {
+  cursor: pointer;
+  background-color: var(--primaryOp);
+}
+
+/* Main styling */
+
+body {
+  font-family: "Open Sans", sans-serif;
+  font-size: 1 rem;
+  background-color: var(--bgDark);
+  width: 100vw;
+  color: var(--light);
+}
+
+form {
+  width: 340px;
+  margin: 40px auto;
+}
+
+form > input {
+  width: 250px;
+  height: 24px;
+  border-radius: 5px;
+  border: none;
+}
+
+#result {
+  width: 90%;
+  margin: 40px auto;
+}
+
+#userInfo {
+  display: flex;
+  border: 2px solid var(--primary);
+}
+
+.image {
+  border-right: 2px solid var(--primary);
+}
+
+.image > a > img {
+  border-radius: 50%;
+  width: 150px;
+  margin: 20px 15px;
+}
+
+.user {
+  width: 100%;
+  background-color: var(--dark);
+}
+
+.card {
+  margin: 20px 15px;
+}
+
+.card,
+.repo-name {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: center;
+}
+
+.card > h2 {
+  color: var(--primary);
+}
+
+.date,
+.language {
+  color: var(--light);
+  font-weight: 400;
+}
+
+.bio {
+  margin: 30px 15px;
+  justify-content: flex-start;
+  gap: 80px;
+  text-align: left;
+}
+
+.card > h3,
+.card-element > h3,
+.card-element > i,
+.repo-info > h3 {
+  color: var(--primaryOp2);
+}
+
+.repos,
+.info {
+  justify-content: space-around;
+  width: 65%;
+  margin: 40px auto;
+}
+
+.repos {
+  border: 1px solid var(--primaryOp2);
+  padding: 15px;
+}
+
+#userRepos {
+  margin-top: 50px;
+}
+
+#userRepos > ul {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--primary);
+  list-style: none;
+}
+
+#userRepos > ul > li {
+  border-bottom: 1px solid var(--primary);
+  padding: 0.75em;
+}
+
+#userRepos > ul > li:nth-child(even) {
+  background-color: var(--dark);
+}
+
+#userRepos > ul > li:last-child {
+  border-bottom: none;
+}
+
+.repo-info,
+.repo-info > p {
+  padding: 0.75em 0;
+}

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://kit.fontawesome.com/c5677161cb.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./style.css">
+  <script src="./app.js" defer></script>
+  <title>Github - user search</title>
+</head>
+
+
+<body>
+  <form id="newForm">
+    <input type="text" id="userName" placeholder="Enter username" onfocus='this.value=""' required>
+    <button id="searchBtn" class="btn" type='button'>Search</button>
+  </form>
+  <div id="result">
+    <section id="userInfo"></section>
+    <section id="userRepos">
+      <ul></ul>
+    </section>
+  </div>
+</body>
+
+</html>
