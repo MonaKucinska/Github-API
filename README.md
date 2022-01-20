@@ -12,7 +12,7 @@
 
 ## General Information
 
-The aim of this project is to build a simple web app. The app displays sorted repositories of a given GitHub user. The GitHub user is selected by the user of this app.
+The aim of this project is to build a simple web app. The app displays basic information about the user along with sorted public repositories. The GitHub user is selected by the user of this app. 
 
 ## Technologies Used
 
