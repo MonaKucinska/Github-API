@@ -1,6 +1,6 @@
 # Github-API
 
-> Live demo (https://brave-beaver-339708.netlify.app)
+> Live demo (https://condescending-hoover-90dfe1.netlify.app/)
 
 ## Table of Contents
 

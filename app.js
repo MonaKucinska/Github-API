@@ -24,10 +24,21 @@ const searchUser = () => {
 
 //fetch basic GitHub user info and forwards it into printing function
 const fetchData = async (userName) => {
-  const url = 'https://api.github.com/users/'+userName;
-  const response = await fetch(url);
-  const result = await response.json();
-  printUserInfo(result);
+  try {
+    const url = 'https://api.github.com/users/'+userName;
+    const response = await fetch(url);
+    if(response.ok){
+      console.log("SUCCESS")
+    }
+    else {
+      console.log("NOT SUCCESS")
+    }
+    const result = await response.json();
+    printUserInfo(result);
+  } catch(err) {
+    console.error(err);
+  }
+  
 }
 
 // prints info about user
@@ -83,10 +94,16 @@ const printUserInfo = (user) => {
 
 //fetch data about repositories and forwards it into printing function
 const fetchRepos = async (userName) => {
-  const url = 'https://api.github.com/users/'+userName+'/repos';
-  const response = await fetch(url);
-  const result = await response.json();
-  printRepos(sortRepos(result));
+  try {
+    const url = 'https://api.github.com/users/'+userName+'/repos';
+    const response = await fetch(url);
+    const result = await response.json();
+    const sortedRepos = sortRepos(result);
+    printRepos(sortedRepos);
+  } catch (err) {
+    console.error(err);
+  }
+  
 }
 
 // prints data about repositories
@@ -141,7 +158,7 @@ const clearArea = () => {
 
 
 // search user after clicking a search button
-form.addEventListener('click', function(e){
+searchBtn.addEventListener("click", function(e){
   e.preventDefault();
   clearArea();
   searchUser();
